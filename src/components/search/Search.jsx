@@ -1,6 +1,18 @@
+import { useEffect, useState } from "react";
+
 const Search = ({ props }) => {
-  const { responseCharacter } = props;
-  console.log(responseCharacter.results);
+  const { responseCharacter, setSearchCharacter } = props;
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    if (responseCharacter?.results) {
+      setSearchCharacter(
+        responseCharacter?.results?.filter((item) =>
+          item.name.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    }
+  }, [search, responseCharacter]);
 
   return (
     <div className="input-group p-5">
@@ -9,14 +21,8 @@ const Search = ({ props }) => {
         className="form-control"
         placeholder="Search comic"
         aria-label="Search comic"
+        onChange={(e) => setSearch(e.target.value)}
       />
-      <button
-        className="btn btn-outline-secondary "
-        type="button"
-        id="button-add"
-      >
-        Search
-      </button>
     </div>
   );
 };

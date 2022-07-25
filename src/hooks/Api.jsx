@@ -4,8 +4,9 @@ import { urlBase } from "../services/RickAndMorty.services";
 const FetchsApi = () => {
   const [responseCharacter, setResponseCharacter] = useState();
   const [loading, setLoading] = useState(false);
+  const [searchCharacter, setSearchCharacter] = useState();
 
-  const ListCharacters = async () => {
+  const ListCharacters = () => {
     fetch(urlBase + "/character")
       .then((response) => response.json())
       .then((data) => setResponseCharacter(data))
@@ -19,6 +20,8 @@ const FetchsApi = () => {
   return {
     responseCharacter,
     loading,
+    searchCharacter,
+    setSearchCharacter,
   };
 };
 
