@@ -1,11 +1,27 @@
 header {
   background-color: aquamarine;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   height: 50px;
+  padding: 0.5%;
+  font-size: 30px;
 }
 
-header span {
+header .name {
+  font-weight: bold;
+}
+
+footer {
+  background-color: rgb(224, 110, 39);
+}
+
+footer span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .author {
   font-weight: bold
 }
