@@ -13,3 +13,6 @@ In the project console, you can run:
 In the project console, you can run:
 
 ### `npm start`
+
+Project Image:
+![Image text](https://github.com/AlejaMC15/RickAndMortyApp/blob/master/src/images/ViewApp.png)
